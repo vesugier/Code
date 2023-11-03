@@ -13,6 +13,7 @@ import asyncio
 
 headers = {
     'content-type': 'application/x-www-form-urlencoded; charset=utf-8',
+    'User-Agent': 'Mozilla/5.0 BiliDroid/7.50.0 (bbcallen@gmail.com) os/android model/RMX3708 mobi_app/android build/7500300 channel/master innerVer/7500310 osVer/13 network/2'
 }
 
 Pay = 0
@@ -112,6 +113,7 @@ def buy(actid, lotteryid, goodid, price, buy_num=1):
 
     data = {
         'access_key': accesskey,
+        'appkey': appkey,
         'biz_extra': json.dumps(extra, ensure_ascii=False),
         'context_id': '0',
         'context_type': '103',
@@ -120,8 +122,8 @@ def buy(actid, lotteryid, goodid, price, buy_num=1):
         'pay_bp': price,
         'platform': 'android',
     }
-    response = requests.post('https://api.live.bilibili.com/xlive/revenue/v1/order/createOrder', headers=headers,
-                             data=data).json()
+
+    response = requests.post('https://api.live.bilibili.com/xlive/revenue/v1/order/createOrder', headers=headers, data=data).json()
     if response['code'] == 0:
         Pay = 1
     sys.stdout = open('output.txt', 'a+')
@@ -275,6 +277,7 @@ def main():
 
     else:
         print("无效的选择")
+
         
     sys.stdout = open('output.txt', 'a+')
     names = ('名字', '数藏集ID', '抽奖ID', '货品ID', '价格', '开始时间')

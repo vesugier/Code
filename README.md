@@ -1,6 +1,6 @@
 # B站相关脚本
 
-![run](./refs/run.jpg)
+<div align="left"><img src="./refs/run.jpg"width="50%"><img src="http://counter.seku.su/cmoe?name=bilicode&theme=rule34" alt="yourname" width="50%"/></div>
 
 所有变量名/函数名都写的很清楚是什么作用，测试可用，不提供后续服务
 
